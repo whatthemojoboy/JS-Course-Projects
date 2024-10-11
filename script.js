@@ -1,0 +1,1 @@
+document.contentEditable = true
