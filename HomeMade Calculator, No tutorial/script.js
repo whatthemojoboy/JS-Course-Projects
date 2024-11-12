@@ -65,12 +65,21 @@ function track(sign) {
 
 //Function to show final value when eq btn is clicked
 function final() {
+    let zero = String(tracker[0]);
+  if (zero.length > maxLength) {
+      h1El.textContent = 'ERROR';
+      gt.textContent = 'ERROR';
+      alert('Calculator Error (Total is too long), Clear calculator or refresh page');
+      document.querySelectorAll("button").forEach((button) => {button.disabled = true});
+      document.getElementById('AC').disabled = false; 
+  } else {
   h1El.textContent = tracker[0];
   gt.textContent = "Grand Total";
   document.querySelectorAll("button").forEach((button) => {
     button.disabled = true;
   });
   document.getElementById("AC").disabled = false;
+  }
 }
 //Functions that add numbers to the display value
 function btn1() {
