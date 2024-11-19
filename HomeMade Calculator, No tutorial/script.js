@@ -6,6 +6,8 @@ const maxLength = 9;
 const gt = document.getElementById("grand-total");
 //Declar const for AC button
 const acBtn = document.getElementById("AC");
+//Declar a const for the character '.'
+const char = '.';
 
 //Declare 2 let variables to keep track of the process
 let tracker = [];
@@ -43,12 +45,12 @@ function track(sign) {
       tracker = [total.toFixed(3)];
       symbol = [sgn];
     } else if (symbol[0] === "-") {
-      console.log(tracker);
+      
       let total = Number(tracker[0]) - Number(tracker[1]);
       tracker = [total.toFixed(3)];
       symbol = [sgn];
     } else if (symbol[0] === "*") {
-      console.log(tracker);
+      
       let total = Number(tracker[0]) * Number(tracker[1]);
       tracker = [total.toFixed(3)];
       symbol = [sgn];
@@ -59,8 +61,8 @@ function track(sign) {
     }
   }
 
-  console.log(tracker);
-  console.log(symbol);
+  
+  
 }
 
 //Function to show final value when eq btn is clicked
@@ -80,6 +82,27 @@ function final() {
   });
   document.getElementById("AC").disabled = false;
   }
+}
+
+//Function if tracker[0] has a decimal number for the final answer
+function check() {
+    str = String(tracker[0]);
+    index = str.indexOf(char);
+    strb = index ? str.substring(0, index) : undefined;
+    stra = index ? str.substring(index + 1) : undefined;
+    function inside() {
+        tracker = str.charAt(char) ? [tracker[0].toFixed(2)] : [tracker[0]];
+        let x = String(tracker[0]);
+        if (x.length > maxLength) {
+      h1El.textContent = 'ERROR';
+      gt.textContent = 'ERROR';
+      alert('Calculator Error (Total is too long), Clear calculator or refresh page');
+      document.querySelectorAll("button").forEach((button) => {button.disabled = true});
+      document.getElementById('AC').disabled = false; 
+        } else {
+            final();
+        }
+    } inside();
 }
 //Functions that add numbers to the display value
 function btn1() {
@@ -164,28 +187,29 @@ function btnEq() {
       let total = Number(tracker[0]) + Number(tracker[1]);
       tracker = [total];
       symbol = [];
-      final();
+      check();
     } else if (symbol[0] === "-") {
       let total = Number(tracker[0]) - Number(tracker[1]);
       tracker = [total];
       symbol = [];
-      final();
+      check();
     } else if (symbol[0] === "/") {
       let total = Number(tracker[0]) / Number(tracker[1]);
       tracker = [total];
       symbol = [];
-      final();
+      check();
     } else if (symbol[0] === "*") {
       let total = Number(tracker[0]) * Number(tracker[1]);
       tracker = [total];
       symbol = [];
-      final();
+      check();
     } else {
       console.log("TROLL");
     }
   } else {
-    final();
+    check();
   }
 }
+
 
 //The console.log's in the program are just a way to make sure it worked, didn't feel like taking them out one I finished to project
