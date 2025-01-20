@@ -1,0 +1,106 @@
+<!--For DOM Navigation-->
+<ul id="fruits">
+  <li id="apple">Apple</li>
+  <li id="orange">Orange</li>
+  <li id="banana">Banana</li>
+</ul>
+
+<ul id="vegetables">
+  <li>Carrots</li>
+  <li>Onions</li>
+  <li>Potatoes</li>
+</ul>
+
+
+<ul id="deserts">
+  <li>Cake</li>
+  <li>Pie</li>
+  <li>Ice Cream</li>
+</ul>
+
+<!--For Add, change, or remove html elements with JS-->
+<div id="box1" class="box">
+            <p>Box1</p>
+        </div>
+<div id="box2" class="box">
+            <p>Box2</p>
+        </div>
+<div id="box3" class="box">
+            <p>Box3</p>
+        </div>
+<div id="box4" class="box">
+            <p>Box4</p>
+        </div>
+<!-- For EventListener-->
+<div id="mybox" style="
+  background-color: lightgreen;
+  width: 300px;
+  height: 300px;
+  font-size: 4.1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  text-align: center;
+">
+  Click me
+</div>
+
+<button id="mybtn" style="font-size: 3rem;">Click me</button>
+<!--For NodeList-->
+<button class="mybtn">Button 1</button>
+<button class="mybtn">Button 2</button>
+<button class="mybtn">Button 3</button>
+<button class="mybtn">Button 4</button>
+
+<!--For classList-->
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  .enabled {
+    background-color: lightblue;
+    color: white;
+  }
+  
+  .hover {
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.2);
+  }
+  
+  .disabled {
+    background-color: hsl(0, 0%, 60%);
+    color: hsl(0, 0%, 80%);
+  }
+</style>
+<h1 id="h1">Hello</h1>
+<button id="mybtn">My button</button>
+<!--For ClassList Challenge with NodeLIst-->
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .enabled {
+    background-color: lightblue;
+    color: white;
+  }
+  
+  .hover {
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.2);
+  }
+  
+  .disabled {
+    background-color: hsl(0, 0%, 60%);
+    color: hsl(0, 0%, 80%);
+  }
+</style>
+<button class="mybtns">Btn 1</button>
+<button class="mybtns">Btn 2</button>
+<button class="mybtns">Btn 3</button>
+<button class="mybtns">Btn 4</button>
+
+<!-- For fetchDataFromApis -->
+<input type="text" id="pokemonName" placeholder="Enter Pokemon Name">
+<button onclick="fetchData()">Fetch Pokemon</button><br>
+
+<img src="" alt="Pokemon Sprite" id="pokemonSprite" style="display: none">
